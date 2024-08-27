@@ -524,6 +524,7 @@
 		programs.kitty.theme = "Gruvbox Dark Hard";
 		programs.kitty.settings = {
 			window_padding_width = 10;
+			confirm_os_window_close = 0;
 		}; # Kitty config ends
 
 		# Starship config
