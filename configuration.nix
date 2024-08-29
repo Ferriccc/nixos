@@ -9,6 +9,7 @@
     [
       # Include the modular configuration
       <home-manager/nixos>
+      ./colors.nix
       ./hardware-configuration.nix
       ./git.nix
       ./hyprland.nix
@@ -129,6 +130,8 @@
     wget
     curl
     neovim
+    networkmanagerapplet
+    lua-language-server
     cargo
     gnome-themes-extra
     gtk-engine-murrine

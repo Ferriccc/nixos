@@ -18,7 +18,7 @@
         margin-left = 18;
         modules-left = [ "custom/appmenuicon" "clock" ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "network" "battery" "backlight" "pulseaudio" ];
+        modules-right = [ "tray" "network" "battery" "backlight" "pulseaudio" ];
         backlight = {
           format = "{icon} {percent}%";
           format-icons = [ "" "" "" "" "" "" "" "" "" ];
@@ -55,6 +55,11 @@
           format-icons = [ "" "" "" "" "" ];
           tooltip = true;
         };
+        tray = {
+          icon_size = 20;
+          show-passive-items = true;
+          spacing = 10;
+        };
         "custom/appmenuicon" = {
           format = "";
           on-click = "wofi --show=drun";
@@ -63,10 +68,6 @@
       };
     };
     programs.waybar.style = ''
-      			@define-color fg #c7ab7a;
-      			@define-color bg #1d2021;
-      			@define-color accent #a9b665;
-
       			* {
       			    border: none;
       			    border-radius: 0;
@@ -76,17 +77,17 @@
       			    font-size: 14px;
       			    padding: 0;
       			    background-color: transparent;
-      			    color: @fg;
+      			    color: ${config.foregroundHex};
       			}
 
       			window#waybar {
-      			    background: @bg;
+      			    background: ${config.backgroundHex};
       			    border-radius: 10;
       			}
 
 
       			#custom-appmenuicon {
-      			    color: @accent;
+      			    color: ${config.accentHex};
       			    margin-left: 15px;
       			}
 
@@ -102,8 +103,8 @@
       			}
 
       			#workspaces button.active {
-      			    border-bottom: 4px solid @accent;
-      			    color: @accent;
+      			    border-bottom: 4px solid ${config.accentHex};
+      			    color: ${config.accentHex};
       			}
 
       			#workspaces button.urgent {
@@ -118,12 +119,12 @@
       			}
 
       			#taskbar button.active {
-      			    border-bottom: 4px solid @accent;
-      			    color: @accent;
+      			    border-bottom: 4px solid ${config.accentHex};
+      			    color: ${config.accentHex};
       			}
 
       			#battery.urgent {
-      			    color: @bg;
+      			    color: ${config.backgroundHex};
       			    background-color: #ea6962;
       			    border: 2px solid #303536;
       			}

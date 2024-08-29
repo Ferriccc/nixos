@@ -30,7 +30,7 @@
       enable = true;
       settings = {
         monitor = ", 1920x1080@120, auto, 1.25";
-        exec-once = [ "swww-daemon" "waybar" "wl-paste --watch cliphist store" ];
+        exec-once = [ "swww-daemon" "waybar" "wl-paste --watch cliphist store" "nm-applet" "blueman-applet" ];
         "$term" = "kitty";
         "$screenshot" = "hyprshot -m region";
         "$colorpicker" = "hyprpicker -a";
@@ -42,9 +42,9 @@
         general = {
           gaps_in = 5;
           gaps_out = 5;
-          border_size = 2;
           resize_on_border = true;
-          "col.active_border" = "0xffa9b665";
+          border_size = 0;
+          # "col.active_border" = "RBG(${builtins.substring 1 6 config.backgroundHex + "ff"})";
         };
         decoration = {
           rounding = 10;

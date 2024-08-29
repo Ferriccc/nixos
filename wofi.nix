@@ -36,10 +36,6 @@
       key_forward = "Down";
     };
     programs.wofi.style = ''
-      			@define-color fg #c7ab7a;
-      			@define-color bg #1d2021;
-      			@define-color accent #a9b665;
-
       			* {
       					border: none;
       					box-shadow: none;
@@ -49,19 +45,19 @@
       			window {
       					font-size: 16px;
       					font-family: "monospace";
-      					background-color: @bg;
+      					background-color: ${config.backgroundHex};
       					border-radius: 8px;
-                border: 2px solid @accent;
+                border: 2px solid ${config.accentHex};
       			}
 
       			#outer-box {
       					margin: 10px 10px 20px 10px;
-      					background-color: @bg;
+      					background-color: ${config.backgroundHex};
       			}
 
       			#inner-box {
       					margin: 10px;
-      					background-color: @bg;
+      					background-color: ${config.backgroundHex};
       			}
 
       			#entry {
@@ -72,23 +68,23 @@
       			#entry #text {
       					padding: 0px 0px 0px 10px;
       					font-weight: normal;
-      					color: @fg;
+      					color: ${config.foregroundHex};
       			}
 
       			#entry:selected {
-      					background-color: @accent;
+      					background-color: ${config.accentHex};
       			}
 
       			#entry:selected #text {
       					padding: 0px 0px 0px 10px;
       					font-weight: normal;
-      					color: @bg;
+      					color: ${config.backgroundHex};
       			}
 
       			#input {
       					background: transparent;
       					margin: 0px 5px 0px 20px;
-      					color: @fg;
+      					color: ${config.foregroundHex};
       					padding: 5px;
       			}
 
