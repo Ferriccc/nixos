@@ -22,6 +22,16 @@
     };
   };
 
+  # xdg-desktop-portals
+  xdg.portal = {
+    xdgOpenUsePortal = true;
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
+  };
+
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -97,14 +107,12 @@
           rules = {
             windowrulev2 = [
               "animation slide, class:^(wofi)$"
-              "move 100%-433 53, class:^(wofi)$, title:^(clippick)$"
+              "animation slide, class:^(wofi)$, title:^(clippick)$"
             ];
             windowrule = [
-              "float,^(blueman-manager)$"
               "float,^(org.gnome.Calculator)$"
               "float,title:^(Picture-in-Picture)$"
               "float,^(eog)$"
-              "size 40% 40%,^(blueman-manager)$"
               "size 60% 80%,^(org.gnome.Calculator)$"
               "size 60% 80%,^(eog)$"
             ];
@@ -134,6 +142,7 @@
               "SUPER, v, exec, pkill wofi || $clipboard_history"
               "SUPER, space, exec, pkill wofi || $launcher_drun"
               "SUPER, M, fullscreen"
+              "SUPER_SHIFT, M, exec, hyprctl dispatch exit"
               "SUPER, F, togglefloating,"
               "SUPER, 1, workspace, 1"
               "SUPER, 2, workspace, 2"

@@ -19,6 +19,9 @@
 
       			# Initialize Zoxide
       			eval "$(zoxide init bash)"
+            
+            # Add scripts directory to path
+            export PATH=$PATH:~/scripts/
 
       			# functions
       			function rm() {
@@ -34,10 +37,11 @@
       			}
 
       			# aliases
-      			alias cat="bat"
       			alias ls="exa -l --git --color=always --icons --sort=extension --no-user --no-permissions"
       			alias lt="exa --tree -l --git --color=always --icons --sort=extension --no-permissions --no-user"
       			alias cd="z"
+            alias gon="bash ~/scripts/GmodeON.sh"
+            alias goff="bash ~/scripts/GmodeOFF.sh"
 
       			# enable case-insensitive auto-completion
       			shopt -s nocaseglob

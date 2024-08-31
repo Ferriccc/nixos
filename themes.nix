@@ -5,6 +5,10 @@
     <home-manager/nixos>
   ];
 
+  environment.systemPackages = with pkgs; [
+    adwaita-icon-theme
+  ];
+
   home-manager.users.shrey = { pkgs, ... }: {
     home.pointerCursor = {
       gtk.enable = true;
@@ -23,8 +27,8 @@
       };
 
       theme = {
-        package = pkgs.colloid-gtk-theme;
-        name = "Colloid";
+        name = "Adwaita-dark";
+        package = pkgs.gnome-themes-extra;
       };
 
       iconTheme = {
